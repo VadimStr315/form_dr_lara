@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.46']
 
 
 # Application definition
@@ -117,11 +117,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 import os
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR, "static"),
 ]
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 587

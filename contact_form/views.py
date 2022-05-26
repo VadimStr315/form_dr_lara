@@ -30,9 +30,9 @@ def contact(request):
             email.save()
             p.save()  
             # return redirect('success')   
-        print("хуй")      
+     
     form = ContactForm()
-    print('хуй2')
+    
     return render(request, "contact_form/main.html", {'form': form})
         
     # form = SubscribeForm()
