@@ -1,0 +1,150 @@
+ .u-section-1 {
+  background-image: url("/static/contact_form/images/-2.png");
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 788px;
+}
+
+.u-section-1 .u-form-1 {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  height: 597px;
+}
+
+.u-section-1 .u-label-1 {
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: normal;
+}
+
+.u-section-1 .u-input-1 {
+  font-size: 1.125rem;
+}
+
+.u-section-1 .u-label-2 {
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: normal;
+}
+
+.u-section-1 .u-input-2 {
+  font-size: 1.125rem;
+}
+
+.u-section-1 .u-form-group-3 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-label-3 {
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: normal;
+}
+
+.u-section-1 .u-input-3 {
+  font-size: 1.125rem;
+}
+
+.u-section-1 .u-form-group-4 {
+  margin-left: 0;
+}
+
+.u-section-1 .u-label-4 {
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: normal;
+}
+
+.u-section-1 .u-input-4 {
+  font-size: 1.125rem;
+}
+
+.u-section-1 .u-btn-1 {
+  background-image: none;
+  font-size: 1.5rem;
+  width: 60%;
+  font-weight: 700;
+  padding: 10px 31px 10px 30px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-form-1 {
+    height: 489px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    padding: 16px 29px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 1440px;
+  }
+
+  .u-section-1 .u-form-1 {
+    margin-top: 544px;
+    height: 609px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 815px;
+  }
+
+  .u-section-1 .u-form-1 {
+    height: 503px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    padding-top: 17px;
+    padding-bottom: 17px;
+  }
+}
+
+@media (max-width: 575px) {
+   .u-section-1 {
+    background-position: 50% 50%;
+  }
+
+  .u-section-1 .u-sheet-1 {
+    min-height: 812px;
+  }
+
+  .u-section-1 .u-form-1 {
+    margin-top: 252px;
+    height: 411px;
+  }
+
+  .u-section-1 .u-label-1 {
+    font-size: 0.875rem;
+    letter-spacing: -1px;
+  }
+
+  .u-section-1 .u-label-2 {
+    font-size: 0.875rem;
+    letter-spacing: -1px;
+  }
+
+  .u-section-1 .u-label-3 {
+    font-size: 0.875rem;
+    letter-spacing: -1px;
+  }
+
+  .u-section-1 .u-label-4 {
+    font-size: 0.875rem;
+    letter-spacing: -1px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    font-size: 1rem;
+    width: auto;
+    padding: 12px 33px 12px 32px;
+  }
+}
