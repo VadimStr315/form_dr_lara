@@ -1,5 +1,6 @@
  .u-section-1 {
   background-image: url("/static/contact_form/images/-2.png");
+  background-position: 50% 50%;
 }
 
 .u-section-1 .u-sheet-1 {
@@ -9,14 +10,13 @@
 .u-section-1 .u-form-1 {
   margin-top: 60px;
   margin-bottom: 60px;
-  /* height: 597px; */
-  height: auto;
+  height: 597px;
 }
 
 .u-section-1 .u-label-1 {
-  font-weight: 700;
   font-size: 1.125rem;
   letter-spacing: normal;
+  font-weight: 700;
 }
 
 .u-section-1 .u-input-1 {
@@ -24,9 +24,9 @@
 }
 
 .u-section-1 .u-label-2 {
-  font-weight: 700;
   font-size: 1.125rem;
   letter-spacing: normal;
+  font-weight: 700;
 }
 
 .u-section-1 .u-input-2 {
@@ -38,9 +38,9 @@
 }
 
 .u-section-1 .u-label-3 {
-  font-weight: 700;
   font-size: 1.125rem;
   letter-spacing: normal;
+  font-weight: 700;
 }
 
 .u-section-1 .u-input-3 {
@@ -52,9 +52,9 @@
 }
 
 .u-section-1 .u-label-4 {
-  font-weight: 700;
   font-size: 1.125rem;
   letter-spacing: normal;
+  font-weight: 700;
 }
 
 .u-section-1 .u-input-4 {
@@ -70,9 +70,18 @@
 }
 
 @media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 650px;
+  }
+
   .u-section-1 .u-form-1 {
-    /* height: 489px; */
-    height: auto;
+    height: 489px;
+  }
+
+  .u-section-1 .u-form-group-4 {
+    font-weight: normal;
+    font-size: 1rem;
+    letter-spacing: normal;
   }
 
   .u-section-1 .u-btn-1 {
@@ -82,7 +91,7 @@
 
 @media (max-width: 991px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 1440px;
+    min-height: 498px;
   }
 
   .u-section-1 .u-form-1 {
@@ -97,7 +106,7 @@
 
 @media (max-width: 767px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 815px;
+    min-height: 374px;
   }
 
   .u-section-1 .u-form-1 {
@@ -111,12 +120,8 @@
 }
 
 @media (max-width: 575px) {
-   .u-section-1 {
-    background-position: 50% 50%;
-  }
-
   .u-section-1 .u-sheet-1 {
-    min-height: 812px;
+    min-height: 235px;
   }
 
   .u-section-1 .u-form-1 {
@@ -139,6 +144,11 @@
     letter-spacing: -1px;
   }
 
+  .u-section-1 .u-form-group-4 {
+    font-size: 0.875rem;
+    letter-spacing: -1px;
+  }
+
   .u-section-1 .u-label-4 {
     font-size: 0.875rem;
     letter-spacing: -1px;
@@ -146,7 +156,6 @@
 
   .u-section-1 .u-btn-1 {
     font-size: 1rem;
-    width: auto;
     padding: 12px 33px 12px 32px;
   }
 }
