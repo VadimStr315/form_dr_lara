@@ -10,17 +10,18 @@
     <title>Главная</title>
     <link rel="stylesheet" href="{% static 'contact_form/css/nicepage.css'%}" media="screen">
 <link rel="stylesheet" href="{% static 'contact_form/css/Главная.css'%}" media="screen">
-<script class="u-script" type="text/javascript" src="{% static 'contact_form/js/jquery.js'%}" defer=""></script>
-<script class="u-script" type="text/javascript" src="{% static 'contact_form/js/nicepage.js'%}" defer=""></script>
-<link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-
+    <script class="u-script" type="text/javascript" src="{% static 'contact_form/js/jquery.js'%}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'contact_form/js/nicepage.js'%}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.10.5, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": ""
 }</script>
-    <meta name="theme-color" content="#788fa4">
+    <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Главная">
     <meta property="og:type" content="website">
   </head>
@@ -28,34 +29,65 @@
     <section class="u-clearfix u-image u-section-1" id="sec-0efa" data-image-width="518" data-image-height="922">
       <div class="u-align-left-xs u-clearfix u-sheet u-valign-middle-lg u-valign-middle-xl u-sheet-1">
         <div class="u-expanded-width u-form u-form-1">
-          <form  method="POST" class="u-clearfix u-form-spacing-11 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 0px;">
+          <form action="#" method="POST" class="u-clearfix u-form-spacing-11 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 0px;">
             {% csrf_token %}
-            
             <div class="u-form-group u-form-name u-label-top">
               <label for="name" class="u-custom-font u-label u-text-font u-text-white u-label-1">ИМЯ</label>
-              <input type="text" id="name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-50 u-text-black u-white u-input-1" required>
+              <input type="text" placeholder="Иванов Иван Иванович" id="name" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-50 u-text-black u-white u-input-1" required="">
             </div>
             <div class="u-form-email u-form-group u-label-top">
-              <label for="email-81b8" class="u-custom-font u-label u-text-font u-text-white u-label-2">E-MAIL</label>
-              <input type="email" id="email" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-50 u-text-black u-white u-input-2" required>
+              <label for="email" class="u-custom-font u-label u-text-font u-text-white u-label-2">E-MAIL</label>
+              <input type="email"placeholder="email@email.ru" id="email" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-50 u-text-black u-white u-input-2" required="">
             </div>
             <div class="u-form-group u-form-phone u-label-top u-form-group-3">
               <label for="phone_number" class="u-custom-font u-label u-text-font u-text-white u-label-3">ТЕЛЕФОН</label>
-              <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" id="phone_number" name="phone_number" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-50 u-text-black u-white u-input-3" required>
+              <input type="tel" placeholder="+7(999)777-77-77" id="phone_number" name="phone_number" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-50 u-text-black u-white u-input-3" required="">
+              <!-- pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" -->
+              <script>
+                let inputPhone=document.getElementById("phone_number");
+                inputPhone.oninput=()=>phoneMask(inputPhone)
+                function phoneMask(inputEl) {
+                    let patStringArr = "+7(___)___-__-__".split('');
+                    let arrPush = [3, 4, 5, 7, 8, 9, 11, 12, 14, 15]
+                    let val = inputEl.value;
+                    let arr = val.replace(/\D+/g, "").split('').splice(1);
+                    let n;
+                    let ni;
+                    arr.forEach((s, i) => {
+                        n = arrPush[i];
+                        patStringArr[n] = s
+                        ni = i
+                    });
+                    arr.length < 10 ? inputEl.style.color = 'red' : inputEl.style.color = 'green';
+                    inputEl.value = patStringArr.join('');
+                    n ? inputEl.setSelectionRange(n + 1, n + 1) : inputEl.setSelectionRange(17, 17)
+                }
+            </script>
             </div>
             <div class="u-form-group u-label-top u-form-group-4">
               <label for="date_of_birth" class="u-custom-font u-label u-text-font u-text-white u-label-4">ДАТА РОЖДЕНИЯ</label>
-              <input type="text"  id="date-dc44" name="date-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-50 u-text-black u-white u-input-4" required="">         </div>
+              <input type="text" placeholder="дд/мм/гггг"
+              onkeyup="
+                  var v = this.value;
+                  if (v.match(/^\d{2}$/) !== null) {
+                      this.value = v + '/';
+                  } else if (v.match(/^\d{2}\/\d{2}$/) !== null) {
+                      this.value = v + '/';
+                  }"
+              maxlength="10" id="date_of_birth" name="date_of_birth" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-50 u-text-black u-white u-input-4">
+            </div>
             <div class="u-align-center u-form-group u-form-submit u-label-top">
               <input type="submit" value="submit" class="u-form-control-hidden" onClick="location.href=location.href" >
-              <!-- onClick="location.href=location.href" 
-              placeholder="ДД/ММ/ГГГГ"-->
-              <a href="" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-1 u-radius-50 u-text-body-alt-color u-btn-1">Отправить</a>
+              <a href="#" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-1 u-radius-50 u-text-body-alt-color u-btn-1" >Отправить</a>
             </div>
-            <input type="hidden" value="" name="recaptchaResponse">
+            <!-- <div class="u-form-send-message u-form-send-success"> Спасибо! Ваше сообщение отправлено. </div>
+            <div class="u-form-send-error u-form-send-message"> Отправка не удалась. Пожалуйста, исправьте ошибки и попробуйте еще раз. </div>
+            <input type="hidden" value="" name="recaptchaResponse"> -->
           </form>
         </div>
       </div>
     </section>
-    </body>
+    
+
+  </body>
 </html>

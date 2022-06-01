@@ -14,9 +14,9 @@ from django.shortcuts import render, redirect
 # @csrf_protect
 def contact(request):
     if request.method == 'POST':
-        form = ContactForm(request.POST)
+        form = SubscribeForm(request.POST)
         if form.is_valid():
-            body = {'name': form.cleaned_data['name'],'phone_number': form.cleaned_data['phone_number'],'email': form.cleaned_data['email'],'date_of_birth': form.cleaned_data['date_of_birth']}
+            body = {'name': form.cleaned_data['name'],'phone_number': form.cleaned_data['phone_number'],'email': form.cleaned_data['email'],'date_of_birth': str(form.cleaned_data['date_of_birth'])}
             print(body)
             name = form.cleaned_data['name']
             # subject=f'Клиент: {name}, Дата: {datetime.now()}'
@@ -25,13 +25,15 @@ def contact(request):
             date_of_birth=form.cleaned_data['date_of_birth']
             # message = "\n".join(body.values())
             date_of_ordering=datetime.now()
-            p = Person(name=name, phone_number=number, email=email, date_of_birth=date_of_birth,date_of_ordering=date_of_ordering)
+            p = Person(name=name, phone_number=number, email=email, date_of_birth=str(date_of_birth),date_of_ordering=date_of_ordering)
             email=Emails_only(email=email,date_of_ordering=date_of_ordering)
             email.save()
             p.save()  
-            # return redirect('success')   
+            # return redirect('success')  
+        else: 
+            print(form.errors) 
      
-    form = ContactForm()
+    form = SubscribeForm()
     
     return render(request, "contact_form/main.html", {'form': form})
         
