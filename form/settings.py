@@ -23,11 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = secret()
 import os
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', False) )
 
 
 
-ALLOWED_HOSTS = ['']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -125,11 +126,7 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'vad.streltsov1001@yandex.ru'
-EMAIL_HOST_PASSWORD = 'VadimkaIT100601'
-EMAIL_USE_TLS = True
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

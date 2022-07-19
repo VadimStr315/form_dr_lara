@@ -1,0 +1,21 @@
+ .u-section-1 {
+  background-image: url("/static/contact_form/images/2.png");
+  background-position: 50% 50%;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 757px;
+}
+
+.u-section-1 .u-text-1 {
+  margin-bottom: 60px;
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-text-1 {
+    width: auto;
+    margin-top: 361px;
+    margin-right: -12px;
+    margin-left: auto;
+  }
+}
